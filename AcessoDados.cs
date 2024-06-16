@@ -33,31 +33,36 @@ namespace PRJ_AGAENDA1
 			}
 		}
 	
-	public void Inserir(string nomeaux, stringemailaux, string telefoneaux)
+	public void Inserir(string nomeaux, string emailaux, string telefoneaux)
 	{
-		MySqlConnection conexao;
-		MySqlCommand cmd;
-		string Sql;
-		
-		conexao = abrirConexao();
-		try
-		{
-			if (conexao!=null)
-			{
-				sql = "insert into pessoas values (null, '" + nomeaux + "', '"+emailaux+"','"+telefoneaux"')";
-				cmd = new MySqlCommand(Sql,conexao);
-				cmd.ExecuteNonQuery();
-			}
-		}
-		catch (Exception ex)
-		{
-			MessageBox.Show("Erro na gravação:" + ex.toString(),"Aviso",MessageBoxButtons.OK, MessageBoxIcon.Warning);
-		}
-		finally
-		{
-			conexao.Close();
-		}
-	}
+    MySqlConnection conexao = abrirConexao();
+    MySqlCommand cmd;
+    string sql;
+
+    try
+    {
+        if (conexao != null)
+        {
+            // Usando parâmetros para evitar SQL Injection
+            sql = "INSERT INTO pessoas (nome, email, telefone) VALUES (@nome, @Email, @Telefone)";
+            cmd = new MySqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@nome", nomeaux);
+            cmd.Parameters.AddWithValue("@Email", emailaux);
+            cmd.Parameters.AddWithValue("@Telefone", telefoneaux);
+            
+            cmd.ExecuteNonQuery();
+        }
+    }
+    catch (Exception ex)
+    {
+        MessageBox.Show("Erro na gravação: " + ex.ToString(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+    }
+    finally
+    {
+        conexao.Close();
+    }
+}
+
 	
 	public void Alterar(int idaux, string nomeaux, string emailaux, string telefoneaux)
 	{
