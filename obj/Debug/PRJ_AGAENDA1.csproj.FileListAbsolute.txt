@@ -1,0 +1,4 @@
+C:\Users\POLIMIG\Documents\SharpDevelop Projects\PRJ_AGAENDA1\PRJ_AGAENDA1\obj\Debug\PRJ_AGAENDA1.csprojResolveAssemblyReference.cache
+C:\Users\POLIMIG\Documents\SharpDevelop Projects\PRJ_AGAENDA1\PRJ_AGAENDA1\obj\Debug\PRJ_AGAENDA1.FRMCONTATOS.resources
+C:\Users\POLIMIG\Documents\SharpDevelop Projects\PRJ_AGAENDA1\PRJ_AGAENDA1\obj\Debug\PRJ_AGAENDA1.MainForm.resources
+C:\Users\POLIMIG\Documents\SharpDevelop Projects\PRJ_AGAENDA1\PRJ_AGAENDA1\obj\Debug\PRJ_AGAENDA1.csproj.GenerateResource.Cache
